@@ -17,8 +17,8 @@ This project implements a backend service that processes IoT time-series data (t
 ## Backend Setup (Django REST Framework)
 
 ```bash
-git clone <repository_url>
-cd <project_directory>
+git clone https://github.com/arrkpong/IoT-Data-Processing-Assignment.git
+cd IoT-Data-Processing-Assignment
 pip install -r backend/requirements.txt
 python backend/manage.py migrate
 python backend/manage.py runserver
@@ -58,16 +58,13 @@ To simplify testing, a Postman collection is included.
    * `Fetch Processed Data`
    * `Fetch Aggregated Statistics`
 
-> ✅ **Important**: All endpoints must end with a trailing slash `/`
-> e.g., `/api/sensors/data/` — to prevent Django's `APPEND_SLASH` redirect issue
-
 ---
 
 ## API Endpoints
 
 ### 1. Ingest Sensor Data
 
-**POST** `/api/sensors/data/`
+**POST** `http://127.0.0.1:8000/api/sensors/data/`
 
 Request body:
 
@@ -84,7 +81,7 @@ Request body:
 
 ### 2. Fetch Processed Data
 
-**GET** `/api/sensors/processed/`
+**GET** `http://127.0.0.1:8000/api/sensors/processed/`
 
 Response example:
 
@@ -106,7 +103,7 @@ Response example:
 
 ### 3. Fetch Aggregated Statistics
 
-**GET** `/api/sensors/aggregated/?window=1H`
+**GET** `http://127.0.0.1:8000/api/sensors/aggregated/?window=1H`
 
 Response example:
 
