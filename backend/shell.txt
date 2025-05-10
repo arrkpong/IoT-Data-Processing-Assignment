@@ -1,0 +1,18 @@
+import pandas as pd
+from sensors.models import SensorReading
+from sensors.services import clean_and_flag
+
+# โหลดข้อมูลจาก CSV
+df = pd.read_csv("sensor_data.csv", parse_dates=['timestamp'])
+
+# ทำความสะอาดข้อมูลและตรวจจับค่า anomaly
+df_clean = clean_and_flag(df)
+
+# บันทึกข้อมูลที่ทำความสะอาดแล้วลงในฐานข้อมูล
+for _, row in df_clean.iterrows():
+    SensorReading.objects.create(
+        timestamp=row['timestamp'],
+        temperature=row['temperature'],
+        humidity=row['humidity'],
+        air_quality=row['air_quality']
+    )

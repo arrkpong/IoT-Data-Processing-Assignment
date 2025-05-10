@@ -1,0 +1,30 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  # Backend Service
+  backend:
+    build:
+      context: ./backend
+    container_name: backend
+    volumes:
+      - ./backend:/app      # live code mount
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=True
+
+  # Frontend Service
+  frontend:
+    build:
+      context: ./frontend
+    container_name: frontend
+    volumes:
+      - ./frontend:/app     # live code mount
+      - /app/node_modules   # keep container node_modules
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_API_URL=http://backend:8000
+    depends_on:
+      - backend
