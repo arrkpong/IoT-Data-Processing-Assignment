@@ -18,9 +18,17 @@ This project implements a backend service that processes IoT time-series data (t
 
 ```bash
 git clone https://github.com/arrkpong/IoT-Data-Processing-Assignment.git
+```
+```bash
 cd IoT-Data-Processing-Assignment
+```
+```bash
 pip install -r backend/requirements.txt
+```
+```bash
 python backend/manage.py migrate
+```
+```bash
 python backend/manage.py runserver
 ```
 
@@ -33,7 +41,11 @@ API is available at:
 
 ```bash
 cd frontend
+```
+```bash
 npm install
+```
+```bash
 npm run dev
 ```
 
