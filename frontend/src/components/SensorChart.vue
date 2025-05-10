@@ -90,7 +90,7 @@ onMounted(async () => {
         },
         title: {
           display: true,
-          text: 'Temperature Data and Anomalies', // หัวข้อหลักที่เพิ่มขึ้น
+          text: 'Temperature Data and Anomalies',
           font: { size: 16, weight: 'bold' },
           padding: { bottom: 20 }
         }
