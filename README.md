@@ -28,6 +28,7 @@ pip install -r backend/requirements.txt
 ```bash
 python backend/manage.py migrate
 ```
+(Optional: run development server)
 ```bash
 python backend/manage.py runserver
 ```
@@ -45,12 +46,23 @@ cd frontend
 ```bash
 npm install
 ```
+(Optional: run development server)
 ```bash
 npm run dev
 ```
 
 Frontend is available at:
 `http://localhost:5173/`
+
+---
+
+## Docker Setup
+
+```bash
+docker-compose up --build
+```
+
+This will spin up both the backend and frontend containers.
 
 ---
 
@@ -148,16 +160,6 @@ Response example:
 * **Aggregation**:
 
   * Rolling stats by time window (mean, median, min, max)
-
----
-
-## Docker Setup (Optional)
-
-```bash
-docker-compose up --build
-```
-
-This will spin up both the backend and frontend containers.
 
 ---
 
