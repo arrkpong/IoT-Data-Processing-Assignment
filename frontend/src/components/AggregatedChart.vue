@@ -77,7 +77,7 @@ function createChart(data: any) {
         },
         title: {
           display: true,
-          text: 'Temperature Data Aggregation (Mean, Max, Min)', // หัวข้อหลักของกราฟ
+          text: 'Temperature Data Aggregation (Mean, Max, Min)',
           font: { size: 16, weight: 'bold' },
           padding: { bottom: 20 }
         }
